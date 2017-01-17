@@ -87,8 +87,8 @@ startGame()
 
 function startGame() {
     myGameArea = new gamearea();
-    myGamePiece = new component(60, 30, "images/TgC_comic742.gif", 10, 120, "image");
-    myscore = new component("15px", "Consolas", "red", 220, 25, "text");
+    myGamePiece = new component(50, 40, "images/TgC_comic742newww.gif", 10, 90, "image");
+    myscore = new component("15px", "Consolas", "blue", 220, 25, "text");
     myGameArea.start();
 }
 
@@ -118,6 +118,7 @@ function component(width, height, color, x, y, type) {
         this.image = new Image();
         this.image.src = color;
     }
+    this.score = 0;
     this.width = width;
     this.height = height;
     this.speedX = 0;
@@ -126,6 +127,11 @@ function component(width, height, color, x, y, type) {
     this.y = y;
     this.update = function() {
         ctx = myGameArea.context;
+        if (this.type == "text") {
+      ctx.font = this.width + " " + this.height;
+      ctx.fillStyle = color;
+      ctx.fillText(this.text, this.x, this.y);
+    }
         if (type == "image") {
             ctx.drawImage(this.image,
                 this.x,
@@ -176,8 +182,8 @@ function updateGameArea() {
          min = 50;
          max = 100;
          gap = Math.floor(Math.random()*(max-min+1)+min);
-         myObstacles.push(new component(10, height, "black", x, 0));
-         myObstacles.push(new component(10, x - height - gap, "black", x, height + gap));
+         myObstacles.push(new component(13, height, "images/lightning2_transparent_v1.gif", x, 0, "image" ));
+         myObstacles.push(new component(13, x - height - gap, "images/lightning2_transparent_v1.gif", x, height + gap, "image"));
      }
      for (i = 0; i < myObstacles.length; i += 1) {
          myObstacles[i].x += -1;
@@ -197,14 +203,17 @@ function everyinterval(n) {
 }
 
 function moveup(e) {
+  myGamePiece.image.src = "images/small.gif";
  myGamePiece.speedY = -1;
 }
 
 function movedown() {
+  myGamePiece.image.src = "images/lil.gif";
  myGamePiece.speedY = 1;
 }
 
 function moveleft() {
+myGamePiece.image.src = "images/TgC_comic741qqq.gif";
  myGamePiece.speedX = -1;
 }
 
@@ -213,15 +222,17 @@ function moveright() {
 }
 
 function clearmove(e) {
+ myGamePiece.image.src = "images/TgC_comic742.gif";
  myGamePiece.speedX = 0;
  myGamePiece.speedY = 0;
 }
 startGame();
 </script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <div id="myfilter"></div>
 
-
-<div id="myrestartbutton" style="float: right;position: relative; padding-top: 75px; padding-left: 120px; display: block;"><button onclick="restartGame()">Restart</button></div>
+  <img src="images/iron_man_3_armor_equip_animation_by_z_studios-d5kmc8q.gif" alt="" style="float: right;position: relative;>
+<div id="myrestartbutton" style=" ;position: relative; padding-top: 75px; padding-left: 120px; display: block;"><button onclick="restartGame()">Restart</button></div>
 
 
 
@@ -234,6 +245,7 @@ startGame();
   <button  class="B" ontouchstart="moveright()" onmousedown="moveright()" onmouseup="clearmove()">B</button><br><br>
   <button  class="A" ontouchstart="movedown()" onmousedown="movedown()" onmouseup="clearmove()">A</button>
 </div>
+
 
 
 </body>
