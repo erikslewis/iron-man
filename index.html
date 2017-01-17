@@ -107,7 +107,7 @@ function startGame() {
 function gamearea() {
    this.canvas = document.createElement("canvas");
    this.canvas.width = 520;
-   this.canvas.height = 380;
+   this.canvas.height = 480;
    document.getElementById("canvascontainer").appendChild(this.canvas);
    this.context = this.canvas.getContext("2d");
    this.pause = false;
@@ -194,8 +194,8 @@ function updateGameArea() {
          min = 50;
          max = 100;
          gap = Math.floor(Math.random()*(max-min+1)+min);
-         myObstacles.push(new component(13, height, "images/Lightning-Beam-psd42615.png", x, 0, "image" ));
-         myObstacles.push(new component(13, x - height - gap, "images/Lightning-Beamnewflip.png", x, height + gap, "image"));
+         myObstacles.push(new component(28, height, "images/Lightning-Beam-psd42615.png", x, 0, "image" ));
+         myObstacles.push(new component(13, x - height - gap, "images/3ZD_laser_fire_beam.png", x, height + gap, "image"));
      }
      for (i = 0; i < myObstacles.length; i += 1) {
          myObstacles[i].x += -1;
