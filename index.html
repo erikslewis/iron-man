@@ -1,8 +1,15 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
 <style>
+img.SS{
+  background-color: black;
+  width: 180px;
+  height: 150px;
+  text-align: center;
+  margin: auto;
+  position: relative;
+  display: block;
+}
 button.B{
   -webkit-border-radius: 60;
  -moz-border-radius: 60;
@@ -75,13 +82,12 @@ padding: 7px 11px 7px 11px;
  text-decoration: none;
 }
 </style>
-</head>
-<body onload="startGame()">
 <script>
 var myGameArea;
 var myGamePiece;
 var myObstacles = [];
 var myscore;
+
 
 function restartGame() {
 document.getElementById("myfilter").style.display = "none";
@@ -215,22 +221,27 @@ function everyinterval(n) {
 }
 
 function moveup(e) {
+
   myGamePiece.image.src = "images/small.gif";
  myGamePiece.speedY = -1;
+
 }
 
 function movedown() {
   myGamePiece.image.src = "images/lil.gif";
  myGamePiece.speedY = 1;
+
 }
 
 function moveleft() {
 myGamePiece.image.src = "images/TgC_comic741qqq.gif";
  myGamePiece.speedX = -1;
+
 }
 
 function moveright() {
  myGamePiece.speedX = 1;
+
 }
 
 function clearmove(e) {
@@ -238,9 +249,21 @@ function clearmove(e) {
  myGamePiece.speedX = 0;
  myGamePiece.speedY = 0;
 }
+
+
+
+
+
 startGame();
 </script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body onload="startGame()">
+
 <div id="myfilter"></div>
 
 <img src="images/iron_man_3_armor_equip_animation_by_z_studios-d5kmc8q.gif" alt="" style="display: inline-block;float: right;position: relative";>
@@ -254,13 +277,14 @@ startGame();
 
 
 <div style="text-align:center;width:320px;">
-  <button class="Y" ontouchstart="moveup()" onmousedown="moveup()" onmouseup="clearmove()">Y</button><br><br>
+  <button class="Y" onkeypress=""ontouchstart="moveup()" onmousedown="moveup()" onmouseup="clearmove()">Y</button><br><br>
   <button  class="X" ontouchstart="moveleft()" onmousedown="moveleft()" onmouseup="clearmove()">X</button>
   <button  class="B" ontouchstart="moveright()" onmousedown="moveright()" onmouseup="clearmove()">B</button><br><br>
   <button  class="A" ontouchstart="movedown()" onmousedown="movedown()" onmouseup="clearmove()">A</button>
 
 </div>
 
+<img class="SS" src="images/news.jpg">
 
 
 </body>
