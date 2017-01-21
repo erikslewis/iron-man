@@ -60,13 +60,18 @@ padding: 7px 11px 7px 11px;
  }
 
 canvas {
-    border:1px solid #d3d3d3;
+    border:8px solid #d3d3d3;
     background-image: url('images/New-York-City-e1455304205974.jpg');
+    text-align: center;
+    margin: auto;
+    position: relative;
+    display: block;
+
 }
 body{
   background-image: url('images/ff7a640b6dab6dab6e22ba2c016f6198.png');
   background-repeat: no-repeat;
-  background-position:right;
+  background-position:center;
   background-color: black;
 }
 button{
@@ -80,6 +85,17 @@ button{
 padding: 7px 11px 7px 11px;
  border: solid silver 4px;
  text-decoration: none;
+}
+img{
+  width:336px;
+  height: 80px;
+  text-align: center;
+  margin: auto;
+  position: relative;
+  display: block;
+}
+img.ana{
+  width: 200px;
 }
 </style>
 <script>
@@ -112,8 +128,8 @@ function startGame() {
 
 function gamearea() {
    this.canvas = document.createElement("canvas");
-   this.canvas.width = 520;
-   this.canvas.height = 480;
+   this.canvas.width = 320;
+   this.canvas.height = 310;
    document.getElementById("canvascontainer").appendChild(this.canvas);
    this.context = this.canvas.getContext("2d");
    this.pause = false;
@@ -263,26 +279,22 @@ startGame();
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body onload="startGame()">
+  <img src="images/http-%2F%2Fmashable.com%2Fwp-content%2Fuploads%2F2013%2F05%2FWhiplash.gif">
+  <div id="canvascontainer"></div>
 
-<div id="myfilter"></div>
-
-<img src="images/iron_man_3_armor_equip_animation_by_z_studios-d5kmc8q.gif" alt="" style="display: inline-block;float: right;position: relative";>
-<div id="myrestartbutton" style=" ;position: relative; padding-top: 75px; padding-left: 120px; display: block;"><button onclick="restartGame()">Restart</button></div>
-
-
-
-<div id="canvascontainer"></div>
-
-
-
-
-<div style="text-align:center;width:320px;">
+<div style="text-align:center;width:360px;">
   <button class="Y" onkeypress=""ontouchstart="moveup()" onmousedown="moveup()" onmouseup="clearmove()">Y</button><br><br>
   <button  class="X" ontouchstart="moveleft()" onmousedown="moveleft()" onmouseup="clearmove()">X</button>
   <button  class="B" ontouchstart="moveright()" onmousedown="moveright()" onmouseup="clearmove()">B</button><br><br>
   <button  class="A" ontouchstart="movedown()" onmousedown="movedown()" onmouseup="clearmove()">A</button>
 
+<div id="myfilter"></div>
+
+<div id="myrestartbutton" style="margin-left:170px; "><button onclick="restartGame()">Restart</button>
+  <img  class="ana"src="images/iron_man_3_armor_equip_animation_by_z_studios-d5kmc8q.gif" alt="" style="display: inline-block;float: left;position: relative";>
 </div>
+</div>
+
 
 <img class="SS" src="images/news.jpg">
 
