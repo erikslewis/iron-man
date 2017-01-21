@@ -6,6 +6,8 @@ img.SS{
   width: 180px;
   height: 150px;
   text-align: center;
+  margin-top: 5px;
+  padding: transparent;
   margin: auto;
   position: relative;
   display: block;
@@ -85,6 +87,12 @@ button{
 padding: 7px 11px 7px 11px;
  border: solid silver 4px;
  text-decoration: none;
+ position: relative;
+ text-align: center;
+}
+#myrestartbutton{
+  margin-top: -100px;
+  margin-left: 250px;
 }
 img{
   width:200px;
@@ -96,6 +104,13 @@ img{
 }
 img.ana{
   width: 200px;
+  height: 200px;
+  margin-left: -100px;
+}
+
+div.see{
+
+
 }
 </style>
 <script>
@@ -280,23 +295,25 @@ startGame();
 </head>
 <body onload="startGame()">
 <img src="images/iron-man-50569ab223d78.png">
+
   <div id="canvascontainer"></div>
 
-<div style="text-align:center;width:360px;">
+<div  style="text-align:center;width:360px;">
   <button class="Y" onkeypress=""ontouchstart="moveup()" onmousedown="moveup()" onmouseup="clearmove()">Y</button><br><br>
   <button  class="X" ontouchstart="moveleft()" onmousedown="moveleft()" onmouseup="clearmove()">X</button>
   <button  class="B" ontouchstart="moveright()" onmousedown="moveright()" onmouseup="clearmove()">B</button><br><br>
   <button  class="A" ontouchstart="movedown()" onmousedown="movedown()" onmouseup="clearmove()">A</button>
-
+</div>
 <div id="myfilter"></div>
 
-<div id="myrestartbutton" style="margin-left:170px; "><button onclick="restartGame()">Restart</button>
-  <img  class="ana"src="images/iron_man_3_armor_equip_animation_by_z_studios-d5kmc8q.gif" alt="" style="display: inline-block;float: left;position: relative";>
-</div>
+<div id="myrestartbutton" style=""><button onclick="restartGame()">Restart</button>
+  <img  class="ana"src="images/iron_man_3_armor_equip_animation_by_z_studios-d5kmc8q.gif" alt="">
 </div>
 
+<div >
+  <img class="SS" src="images/news.jpg">
+</div>
 
-<img class="SS" src="images/news.jpg">
 
 
 </body>
