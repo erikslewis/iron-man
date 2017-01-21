@@ -88,7 +88,7 @@ padding: 7px 11px 7px 11px;
 }
 img{
   width:200px;
-  height: 35px;
+  height: 25px;
   text-align: center;
   margin: auto;
   position: relative;
@@ -129,7 +129,7 @@ function startGame() {
 function gamearea() {
    this.canvas = document.createElement("canvas");
    this.canvas.width = 320;
-   this.canvas.height = 310;
+   this.canvas.height = 300;
    document.getElementById("canvascontainer").appendChild(this.canvas);
    this.context = this.canvas.getContext("2d");
    this.pause = false;
